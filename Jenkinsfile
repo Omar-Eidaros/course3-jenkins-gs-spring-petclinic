@@ -1,16 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage("Checkout") {
-            steps {
-                script {
-                    if (isUnix()) {
-                        git branch: 'main', url: 'https://github.com/Omar-Eidaros/course3-jenkins-gs-spring-petclinic'
-                    } else {
-                        checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/Omar-Eidaros/course3-jenkins-gs-spring-petclinic']]])
-                    }
-                }
-            }
+        // stage("Checkout") {
+        //     steps {
+        //         script {
+        //             if (isUnix()) {
+        //                 git branch: 'main', url: 'https://github.com/Omar-Eidaros/course3-jenkins-gs-spring-petclinic'
+        //             } else {
+        //                 checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/Omar-Eidaros/course3-jenkins-gs-spring-petclinic']]])
+        //             }
+        //         }
+        //     }
         }
         stage("build") {
             steps {
